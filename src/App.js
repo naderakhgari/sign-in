@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
 
 function App() {
+
+  const changeHandler = (event) => {
+  }
+
+  const submitHandler = async (event) => {
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div><div className="App">
+          <h2>Sign In</h2>
+          <hr />
+          <form >
+            <label htmlFor='username' className="form-element">User Name:</label>
+            <input type='text' name='username' placeholder='usertest' onChange={changeHandler} className="form-element"></input>
+            <br />
+            <label htmlFor='password' className="form-element">Password:</label>
+            <input type='password' name='password' placeholder='Password...' onChange={changeHandler}className="form-element"></input>
+            <br />
+            <button onClick={submitHandler} className="form-element">Sign In</button>
+          </form>
+        </div>
     </div>
   );
 }
