@@ -16,6 +16,7 @@ export const getPolicyData = async (tokenData) => {
         headers: {
             environment: 'mock',
             'content-type': 'application/json',
+            authentication:tokenData,
         },
     })
     return res.json();
