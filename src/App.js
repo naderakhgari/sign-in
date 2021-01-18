@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
-import { getTokenData } from './functions';
+import { getTokenData, getPolicyData } from './functions';
 
 function App() {
   const [userData, setUserData] = useState({
@@ -10,7 +10,7 @@ function App() {
     type: 'USER_PASSWORD_AUTH'
   });
   const [tokenData, setTokenData] = useState({});
-  console.log(tokenData)
+  const [policyData, setPolicyData] = useState({});
 
   const changeHandler = (event) => {
     const { name, value } = event.target;
@@ -20,11 +20,20 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    (async () => {
+      if (policyData) {
+        const { access_token } = policyData
+        setPolicyData(await getPolicyData(access_token))
+      }
+    })()
+  }, [])
+
   const submitHandler = async (event) => {
     event.preventDefault();
     setTokenData(await getTokenData(userData))
   }
-
+  console.log(policyData)
   return (
     <div><div className="App">
       <h2>Sign In</h2>
