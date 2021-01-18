@@ -40,7 +40,7 @@ function App() {
       {policyData.policy
         ? <Policy policyData={policyData} />
         : <div className="App">
-          <h2>Sign In</h2>
+          <h2>Sign-In</h2>
           <hr />
           <form >
             <label htmlFor='username' className="form-element">User Name:</label>
@@ -49,10 +49,10 @@ function App() {
             <label htmlFor='password' className="form-element">Password:</label>
             <input type='password' name='password' placeholder='Password...' onChange={changeHandler} className="form-element"></input>
             <br />
-            <button onClick={submitHandler} className="form-element">Sign In</button>
+            <button onClick={submitHandler} className="form-element" name='submit' disabled={!userData.username || !userData.password}>Sign In</button>
           </form>
         </div>}
-    </div>
+    </div> 
   );
 }
 
