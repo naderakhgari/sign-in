@@ -1,3 +1,7 @@
+Users should enter their username and password to be able to sign in. I used fetch to post the user data (username, password and type) to receive access token. I used a useEffect to fetch and get the policy data by sending the access token as Authorization. I passed the policy data to the policy component to display on the page.
+
+To do this app I spent about 3 hours.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
